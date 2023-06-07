@@ -34,6 +34,18 @@ const attachment: Attachment = {
 }
 ```
 
+### Create a preview attachment object
+
+Once you have the attachment object created, you can also create a preview for what to show in a message input before sending:
+
+```tsx
+URL.createObjectURL(
+              new Blob([Buffer.from(somePNGData)], {
+                type: attachment.mimeType,
+              }),
+            ),
+```
+
 ### Encrypt the attachment
 
 Use the `RemoteAttachmentCodec.encodeEncrypted` to encrypt the attachment:
