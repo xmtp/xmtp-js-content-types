@@ -1,6 +1,13 @@
 # Read receipt content type
 
+![Status](https://img.shields.io/badge/Content_type_status-Standards--track-yellow) ![Status](https://img.shields.io/badge/Reference_implementation_status-Alpha-orange)
+
 This package provides an XMTP content type to support read receipts to messages.
+
+> **Important**  
+> This standards-track content type is in **Alpha** status as this implementation doesn't work efficiently with the current protocol architecture. This inefficiency will be addressed in a future protocol release.
+
+Until then, if you must support read receipts, we recommend that you use this implementation and **not build your own custom content type.**
 
 > **Open for feedback**  
 > You are welcome to provide feedback on this implementation by commenting on the [Read Receipts content type proposal](https://github.com/orgs/xmtp/discussions/43).
@@ -27,6 +34,10 @@ yarn add @xmtp/content-type-read-receipt
 # pnpm
 pnpm i @xmtp/content-type-read-receipt
 ```
+
+## Provide an opt-out option
+
+While this is a per-app decision, the best practice is to provide users with the option to opt out of sending read receipts. If a user opts out, when they read a message, a read receipt will not be sent to the sender of the message.
 
 ## Create a read receipt
 
@@ -69,11 +80,10 @@ if (message.contentType.sameAs(ContentTypeReadReceipt)) {
 
 ## Display the read receipt
 
-Generally, read receipts should be displayed under the message it's associated with, and can include a timestamp or no timestamp. Ultimately, how you choose to display read receipts is completely up to you.
+Generally, a read receipt indicator should be displayed under the message it's associated with. The indicator can include a timestamp. Ultimately, how you choose to display a read receipt indicator is completely up to you.
 
-## UX best practices
-
-While this is a per-app decision, the best practice is to provide users with the option to opt out of sending read receipts. If a user opts out, when they read a message, a read receipt will not be sent to the sender of the message.
+> **Important**  
+> The read receipt is provided as an **empty message** whose timestamp provides the data needed for the indicators. **Be sure to filter out read receipt empty messages and not display them to users.**
 
 ## Playground implementation
 
@@ -83,7 +93,7 @@ A read receipt is sent when a user opens a conversation only if the most recent 
 
 To try it out, see the [XMTP React playground](https://github.com/xmtp/xmtp-react-playground).
 
-A read receipt is shown if the most recent message was from the other party and a read receipt for that message exists.
+A read receipt indicator is shown if the most recent message was from the other party and a read receipt for that message exists.
 
 ## Developing
 
