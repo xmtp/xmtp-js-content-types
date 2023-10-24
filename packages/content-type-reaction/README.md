@@ -51,7 +51,6 @@ Now that you have a reaction, you can send it:
 ```tsx
 await conversation.messages.send(reaction, {
   contentType: ContentTypeReaction,
-  contentFallback: `[Reaction] ${client.address} reacted to ${someMessage.content} with:\n\n${reaction.content}`,
 });
 ```
 

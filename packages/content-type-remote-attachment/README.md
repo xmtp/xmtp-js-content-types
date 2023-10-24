@@ -132,7 +132,6 @@ Now that you have a remote attachment, you can send it:
 ```tsx
 await conversation.messages.send(remoteAttachment, {
   contentType: ContentTypeRemoteAttachment,
-  contentFallback: "a screenshot of 1MB of text",
 });
 ```
 

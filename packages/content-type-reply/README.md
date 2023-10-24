@@ -49,7 +49,6 @@ Now that you have a reply, you can send it:
 ```tsx
 await conversation.messages.send(reply, {
   contentType: ContentTypeReply,
-  contentFallback: `[Reply] ${client.address} replied to ${someMessage.content} with:\n\n${reply.content}`,
 });
 ```
 

@@ -41,14 +41,10 @@ While this is a per-app decision, the best practice is to provide users with the
 
 ## Create a read receipt
 
-With XMTP, read receipts are represented as objects with the following keys:
-
-- `timestamp`: The timestamp the read receipt was sent, in ISO 8601 format
+With XMTP, read receipts are represented as empty objects.
 
 ```tsx
-const readReceipt: ReadReceipt = {
-  timestamp: new Date().toISOString();
-};
+const readReceipt: ReadReceipt = {};
 ```
 
 ## Send a read receipt
@@ -56,12 +52,7 @@ const readReceipt: ReadReceipt = {
 If a sender has opened a conversation and has not yet sent a read receipt for its received messages (this can either be done with each message or the most recent message and is an individual app decision), you can send a read receipt like so:
 
 ```tsx
-await conversation.messages.send(
-  {
-    timestamp: new Date().toISOString(),
-  },
-  ContentTypeReadReceipt,
-);
+await conversation.messages.send({}, ContentTypeReadReceipt);
 ```
 
 ## Receive a read receipt
