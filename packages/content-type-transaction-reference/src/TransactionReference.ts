@@ -4,19 +4,19 @@ import type { ContentCodec, EncodedContent } from "@xmtp/xmtp-js";
 export const ContentTypeTransactionReference = new ContentTypeId({
   authorityId: "xmtp.org",
   typeId: "transactionReference",
-  versionMajor: 1,
+  versionMajor: 2,
   versionMinor: 0,
 });
 
 export type TransactionReference = {
   /**
-   * The namespace for the networkId
+   * The chain ID for the transaction as outlined in EIP-155
    */
-  namespace?: string;
+  chainId: number;
   /**
-   * The networkId for the transaction, in decimal or hexidecimal format
+   * The networkId for the transaction
    */
-  networkId: number | string;
+  networkId?: number;
   /**
    * The transaction hash
    */
@@ -27,7 +27,7 @@ export type TransactionReference = {
   metadata?: {
     transactionType: string;
     currency: string;
-    amount: number;
+    amount: bigint;
     decimals: number;
     fromAddress: string;
     toAddress: string;
