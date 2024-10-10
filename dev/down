@@ -3,4 +3,4 @@ set -e
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-docker-compose -p xmtp-js -f $SCRIPT_DIR/docker-compose.yml down
+docker compose -p xmtp-js -f $SCRIPT_DIR/docker-compose.yml down

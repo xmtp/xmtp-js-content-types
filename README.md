@@ -1,6 +1,9 @@
 # XMTP JS content types
 
-This repo provides JavaScript implementations of content types you can use with your app built with the XMTP client SDK for [JavaScript](https://github.com/xmtp/xmtp-js) or [React](https://github.com/xmtp/xmtp-web/packages/react-sdk).
+> [!NOTE]
+> This repository has been archived and is no longer actively maintained. Its contents and all active development have been moved to the [xmtp-js](https://github.com/xmtp/xmtp-js) repository.
+
+This repo provided JavaScript implementations of content types you can use with your app built with the XMTP client SDK for [JavaScript](https://github.com/xmtp/xmtp-js) or [React](https://github.com/xmtp/xmtp-web/packages/react-sdk).
 
 To learn more about the contents of this repository, see this README and the READMEs provided for [packages](https://github.com/xmtp/xmtp-js-content-types/tree/main/packages).
 
