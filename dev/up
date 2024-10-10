@@ -8,4 +8,4 @@ fi
 
 SCRIPT_DIR=$( cd -- "$( dirname -- "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )
 
-docker-compose -p xmtp-js -f $SCRIPT_DIR/docker-compose.yml up -d
+docker compose -p xmtp-js -f $SCRIPT_DIR/docker-compose.yml up -d
